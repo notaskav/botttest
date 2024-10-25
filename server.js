@@ -20,8 +20,8 @@ async function startApp() {
 startApp();
 
 app.get("/ranker", (req, res) => {
-    var User = req.param("userid");
-    var Rank = req.param("rank");
+    var User = req.query.userid;
+    var Rank = req.query.rank;
 
     rbx.setRank(groupId, parseInt(User), parseInt(Rank));
     res.json("Ranked!");
